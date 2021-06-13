@@ -1,0 +1,109 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>美食之旅</title>
+  <link rel="stylesheet" href="">
+  <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+  <!-- MDB icon -->
+  <link rel="icon" href="./img/14.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="./css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="./css/style.css">
+
+
+</head>
+
+<body>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="nav  navbar-expand-lg navbar-dark fixed-top scrolling-navbar 
+    nav-pills nav-justified mb-3 shadow-only-bottom">
+    <img src="./img/2.ico" height="40" width="40">
+    <a class="navbar-brand" href="#">美食之旅</a>
+    <li class="selected">首页</li>
+    <li>中华美食</li>
+    <li>外国菜谱</li>
+    <li>养生食材</li>
+    <li>实验报告</li>
+  </ul>
+  <!-- </header> -->
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main>
+    <div class="tab-content test">
+      <div class="list none-x" style="display:none">
+      </div>
+      <div class="list none-x" style="display:none">
+      </div>
+      <div class="list resp-container">
+        <iframe name="ifd" class="resp-iframe" onload="this.height=ifd.document.body.scrollHeight" width="100%" height="100%"
+        gesture="media"  allow="encrypted-media" allowfullscreen
+          frameborder="0" scrolling="auto" frameborder="0" src=test1.html class="list"></iframe>
+      </div>
+      <div class="list resp-container" style="display:none">
+        <iframe name="ifd" class="resp-iframe" onload="this.height=ifd.document.body.scrollHeight" width="100%" height="100%"
+        gesture="media"  allow="encrypted-media" allowfullscreen
+          scrolling="auto " class="resp-iframe" frameborder="0" src=test2.html class="list"></iframe>
+      </div>
+      <div class="list resp-container" style="display:none">
+        <iframe name="ifd" onload="this.height=ifd.document.body.scrollHeight" width="100%" height="100%"
+          scrolling="auto" class="resp-iframe" frameborder="0" src=test3.html class="list"></iframe>
+      </div>
+      <div class="list resp-container" style="display:none">
+        <iframe name="ifd" onload="this.height=ifd.document.body.scrollHeight" width="100%" height="100%"
+          scrolling="auto" class="resp-iframe" frameborder="0" src=test4.html class="list"></iframe>
+      </div>
+      <div class="list resp-container" style="display:none">
+        <iframe name="ifd" onload="this.height=ifd.document.body.scrollHeight" width="100%" height="100%"
+          scrolling="auto" class="resp-iframe" frameborder="0" src=test5.html class="list"></iframe>
+      </div>
+      <div class="list resp-container" style="display:none">
+      </div>
+      
+    </div>
+  </main>
+  <!--Main layout-->
+
+  
+
+  <!-- end your project here -->
+
+
+
+  <script>
+    $(function () {
+      //获取点击事件的对象
+      $(".nav li").click(function () {
+
+        //获取要显示或隐藏的对象
+        var divShow = $(".tab-content").children('.list');
+        //判断当前对象是否被选中，如果没选中的话进入if循环
+        if (!$(this).hasClass('selected')) {
+          //获取当前对象的索引
+          var index = $(this).index();
+          //当前对象添加选中样式并且其同胞移除选中样式；
+          $(this).addClass('selected').siblings('li').removeClass('selected');
+          //索引对应的div块显示
+          $(divShow[index]).show();
+          $(this).visibility = "visible"
+          //索引对应的div块的同胞隐藏
+          $(divShow[index]).siblings('.list').hide();
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>
